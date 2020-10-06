@@ -1,0 +1,161 @@
+*{
+    margin : 0;
+    padding : 0;
+}
+header{
+    background : linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(../image/p.jpg);
+    height : 100vh;
+    -webkit-background-size : cover;
+    background-size : cover;
+    background-position: center center;
+    position : relative;
+}
+
+.center-align {
+    list-style : none;
+    margin-left : 135px;
+}
+.center-align li {
+    display : inline-block;
+}
+.center-align li a {
+    color : #fff;
+    text-decoration: none;
+    padding : 5px 20px;
+    font-family : poppins;
+    font-size : 18px;
+}
+.center-align li a:hover{
+    background: #fff;
+    color : #333;
+}
+
+.wrapper img{
+    width : 300px;
+    height :auto;
+    margin-left : 160px;
+}
+
+/*end*/
+
+/*styling text tengah*/
+.welcome-text{
+    position : absolute;
+    width : 600px;
+    height : 300px;
+    margin : 9% 30%;
+    text-align : center;
+}
+
+.welcome-text h1{
+    text-align : center;
+    color : #fff;
+    text-transform :uppercase;
+    font-size : 30px;
+}
+.welcome-text h5{
+    text-align : center;
+    color : #fff;
+    text-transform :uppercase;
+    font-size : 15px;
+}
+.welcome-text a{
+    border : 1px solid #fff;
+    padding : 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top:20px;
+    display : inline-block;
+    color : #fff;
+    background-color: #1b8bf9;
+    box-shadow: 1px 2.9px 16px rgba(27, 139, 249, 0.4);
+    transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
+}
+
+/*teknik button agar jika di klik menimbulkan effect tombol tertekan*/
+.welcome-text a:hover{
+    background:#fff;
+    color : #333;
+}
+
+
+.welcome-text a:active {
+    box-shadow: 0 5px transparent;
+    transform: translateY(4px);
+  }
+
+  /*end*/
+
+/*styling tulisan pada bottom*/
+.bottom{
+    position : absolute;
+    width : 600px;
+    margin : 1% 30%;
+    margin-top : 550px;
+    text-align : center;
+    color : white;
+}
+
+@media screen and (max-width: 641px) {
+
+   header .row .wrapper{
+       margin-left : -250px;
+   }
+
+   header .row .nav-wrapper{
+       margin-left : -200px;
+       
+   }
+   header .row .nav-wrapper ul li a{
+        font-size: 15px;
+   }
+   .welcome-text{
+    position : absolute;
+    width : 600px;
+    height : 300px;
+    margin : 9% 30%;
+    text-align : center;
+}
+   header .welcome-text {
+       margin-top:120px;
+       margin-left : -66px;
+   }
+
+   header .welcome-text h1{
+       margin-left : 20%;
+       margin-right : 20%;
+       font-size: 20px;
+   }
+
+   header .bottom{
+       margin-left : -60px;
+   }
+}
+/* hp
+@media screen and (max-width: 641px) {
+    header .row .wrapper{
+        margin-left : -250px;
+    }
+ 
+    header .row .nav-wrapper{
+        margin-left : -180px;
+        
+    }
+    header .row .nav-wrapper ul li a{
+         font-size: 16px;
+    }
+ 
+    header .welcome-text {
+        margin-top:80px;
+        margin-left : -118px;
+    }
+ 
+    header .welcome-text h1{
+        margin-left : 25%;
+        margin-right : 25%;
+        font-size: 15px;
+    }
+
+}   
+*/
