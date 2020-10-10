@@ -1,4 +1,4 @@
-const CACHE_NAME = "JajanYuk!-v2.9";
+const CACHE_NAME = "JajanYuk!-v3.2";
 var urlsToCache = [
   "/",
   "/nav.html",
@@ -6,6 +6,7 @@ var urlsToCache = [
   "/manifest.json",
   "/icon192px.png",
   "/icon.png",
+  "/maskable_icon.png",
   "/pages/home.html",
   "/pages/about.html",
   "/pages/makanan.html",
@@ -22,23 +23,24 @@ var urlsToCache = [
   "/css/home.css",
   "/js/materialize.min.js",
   "/js/nav.js",
+  "/js/register_service_worker.js",
   "https://fonts.googleapis.com/icon?family=Material+Icons",
   "https://fonts.gstatic.com/s/materialicons/v55/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2"
 ];
  
-self.addEventListener("install", function(event) {
+self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
+    caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(urlsToCache);
     })
   );
 });
 
-self.addEventListener("fetch", function(event) {
+self.addEventListener("fetch", event => {
     event.respondWith(
       caches
         .match(event.request, { cacheName: CACHE_NAME })
-        .then(function(response) {
+        .then(response => {
           if (response) {
             console.log("ServiceWorker: Gunakan aset dari cache: ", response.url);
             return response;
@@ -53,11 +55,11 @@ self.addEventListener("fetch", function(event) {
     );
   });
   
-  self.addEventListener("activate", function(event) {
+  self.addEventListener("activate", event => {
     event.waitUntil(
-      caches.keys().then(function(cacheNames) {
+      caches.keys().then(cacheNames => {
         return Promise.all(
-          cacheNames.map(function(cacheName) {
+          cacheNames.map(cacheName => {
             if (cacheName != CACHE_NAME) {
               console.log("ServiceWorker: cache " + cacheName + " dihapus");
               return caches.delete(cacheName);
