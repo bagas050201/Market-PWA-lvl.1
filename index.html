@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
+  <title>Jajan Yuk!</title>
   <link rel="shortcut icon" href="/icon.png">
-  <title>My First PWA</title>
+  <link rel="apple-touch-icon" href="/icon192px.png">
   <meta name="description" content="My first PWA"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/materialize.min.css">
@@ -25,25 +26,7 @@
   <div class="container" id="body-content"></div>
   <script src="js/materialize.min.js"></script>
   <script src="js/nav.js"></script>
-
-  <script>
-    // REGISTER SERVICE WORKER
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function() {
-        navigator.serviceWorker
-          .register("/service-worker.js")
-          .then(function() {
-            console.log("Pendaftaran ServiceWorker berhasil");
-          })
-          .catch(function() {
-            console.log("Pendaftaran ServiceWorker gagal");
-          });
-      });
-    } else {
-      console.log("ServiceWorker belum didukung browser ini.");
-    }
-  </script>
-
+  <script src = "js/register_service_worker.js"></script>
 
 </body>
 </html>
